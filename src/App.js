@@ -2,7 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import 'material-icons/iconfont/material-icons.css';
 import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
@@ -12,6 +14,11 @@ function App() {
       </header>
 
       <NavBar />
+
+      <main>
+        <ItemListContainer />
+      </main>
+      
     </div>
   );
 }

@@ -1,38 +1,42 @@
 import React from "react";
+import CartWidget from "./CartWidget/CartWidget.js";
 
 const NavBar = () => {
     return (
         <nav className='barraPrincipal navbar navbar-expand-lg fixed-top bg-dark'>
             <div className="container-fluid">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                    <a className="nav-link active text-light" aria-current="page" href="#">Inicio</a>
-                </li>
-                <li className="nav-item">
-                    <a className="nav-link text-light" href="#">Carrito</a>
-                </li>
-                <li className="nav-item dropdown">
-                    <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Articulos
-                    </a>
-                    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a className="dropdown-item" href="#">Ropa</a></li>
-                    <li><a className="dropdown-item" href="#">Accesorios</a></li>
-                    <li><a className="dropdown-item" href="#">Volumenes</a></li>
-                    <li><a className="dropdown-item" href="#">Articulos audiovisuales</a></li>
-                    <li><a className="dropdown-item" href="#">Otros</a></li>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                        <a className="nav-link active text-light" aria-current="page" href="#">Inicio</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link text-light" href="#">Carrito</a>
+                    </li>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Articulos
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a className="dropdown-item" href="#">Ropa</a></li>
+                        <li><a className="dropdown-item" href="#">Accesorios</a></li>
+                        <li><a className="dropdown-item" href="#">Volumenes</a></li>
+                        <li><a className="dropdown-item" href="#">Articulos audiovisuales</a></li>
+                        <li><a className="dropdown-item" href="#">Otros</a></li>
+                        </ul>
+                    </li>
                     </ul>
-                </li>
-                </ul>
-                <form className="d-flex" role="search">
-                <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                <button className="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
+                    <form className="d-flex" role="search">
+                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                        <button className="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                    <li>
+                        <CartWidget />
+                    </li>
+                </div>
             </div>
         </nav>
     )
