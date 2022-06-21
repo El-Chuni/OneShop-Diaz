@@ -1,9 +1,9 @@
 import React from "react";
 
-const ItemListContainer = () => {
+const ItemListContainer = ({frase}) => {
     return (
         <div>
-            <span>Kaizoku ou ni ore wa naru!</span>
+            <span>{frase}</span>
         </div>
     )
 }

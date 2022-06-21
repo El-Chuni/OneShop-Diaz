@@ -16,7 +16,7 @@ function App() {
       <NavBar />
 
       <main>
-        <ItemListContainer />
+        <ItemListContainer frase="Kaizoku ou ni ore wa naru!" />
       </main>
       
     </div>
