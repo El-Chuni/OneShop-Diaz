@@ -12,6 +12,21 @@ code {
     monospace;
 }
 
+#itemsCarrito {
+  position: fixed;
+  top: 8vh;
+  right: 4vh;
+  width: 10vh;
+  height: 3vh;
+
+  font-size: 20px;
+  text-align: center;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+  z-index: 2;
+}
+
 .barraPrincipal {
   margin-top: 0;
 }
