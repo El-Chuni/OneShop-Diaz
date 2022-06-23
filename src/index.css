@@ -12,10 +12,13 @@ code {
     monospace;
 }
 
+main {
+  background-image: url("./components/media/fondoPagina.jpg");
+  background-size: cover;
+}
+
 #itemsCarrito {
-  position: fixed;
-  top: 8vh;
-  right: 4vh;
+  position: static;
   width: 10vh;
   height: 3vh;
 
@@ -29,4 +32,27 @@ code {
 
 .barraPrincipal {
   margin-top: 0;
+}
+
+.producto {
+  max-width: 750px;
+  height: 225px;
+}
+
+.producto > li > img {
+  object-fit: contain;
+  width: 175px;
+  height: 175px;
+}
+
+.producto > li > p {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+}
+
+.producto > li > div {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
 }

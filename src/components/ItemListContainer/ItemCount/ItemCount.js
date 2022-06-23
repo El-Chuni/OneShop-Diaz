@@ -1,13 +1,11 @@
 import React, {useState} from "react";
 
-const ItemCount = () => {
+const ItemCount = ({stock, añadido, porAñadir}) => {
 
     const [compras, setCompras] = useState(0);
 
-    let stockActual = 6;
-
     const añadirItem = () => {
-        if (compras<stockActual) {
+        if (compras<(stock-añadido)) {
             setCompras(compras + 1);
         }
     }
@@ -18,16 +16,21 @@ const ItemCount = () => {
         }
     }
 
-    return (
-        <>
-            <p className="rounded"></p>
+    const añadirAlCarrito = () => {
+        porAñadir = compras;
+        añadido = porAñadir; //Para probar el limite
+        setCompras(0);
+    }
 
+    return (
+        <div className="d-flex flex-column">
             <div className="d-flex flex-row justify-content-around" id="itemsCarrito">
                     <button onClick={quitarItem}>-</button>
                     <p>{compras}</p>
                     <button onClick={añadirItem}>+</button>
             </div>
-        </>
+            <botton onClick={añadirAlCarrito} className="bg-secondary rounded my-2 p-2">Añadir al carrito</botton>
+        </div>
     )
 }
 
