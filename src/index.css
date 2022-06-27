@@ -34,7 +34,7 @@ main {
   margin-top: 0;
 }
 
-.producto {
+.producto > li {
   max-width: 750px;
   height: 225px;
 }

@@ -18,7 +18,6 @@ const ItemCount = ({stock, añadido, porAñadir}) => {
 
     const añadirAlCarrito = () => {
         porAñadir = compras;
-        añadido = porAñadir; //Para probar el limite
         setCompras(0);
     }
 
