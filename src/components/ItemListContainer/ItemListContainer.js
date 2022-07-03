@@ -1,13 +1,18 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import posterLuffy from "../media/posterLuffy.jpg";
+import { listaItems } from "../../mocks/productos";
 import ItemList from "./ItemList/ItemList.js";
 
 const ItemListContainer = ({frase}) => {
     
     const promesaDeTiempo = new Promise((resolve, reject) =>
         setTimeout(() => {
-            resolve(listaItems)
+            let seActivoElTimeout = true;
+            if (seActivoElTimeout) {
+                resolve(listaItems)
+            }else{
+                reject("Esto no se ejecutó como se esperaba.")
+            }
         }, 2000)
     )
 
@@ -15,11 +20,6 @@ const ItemListContainer = ({frase}) => {
         promesaDeTiempo
         .then((res) => setItems(res))
     }, [])
-
-    const listaItems = [
-        {id: 1, producto: "Poster 'Se Busca' de Luffy (Post-WCI) 40x60cm", precio: 319.99, img: posterLuffy},
-        {id: 2, producto: "Poster 'Se Busca' de Luffy (Post-WCI) 80x120cm", precio: 599.99, img: posterLuffy}
-    ]
 
     const [items, setItems] = useState ([])
 
