@@ -10,7 +10,7 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         infoItems
-        .then((res) => setItem(res.find((producto) => producto.id === "1")))
+        .then((res) => setItem(res.find((producto) => producto.id === 1)))
         .catch((error)=> console.log(error))
         .finally(() => setCarga(false))
     },[])

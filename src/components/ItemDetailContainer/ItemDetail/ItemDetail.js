@@ -3,12 +3,17 @@ import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
 
 const ItemDetail = ({item}) => {
     return (
-        <div>
+        <div className="productoDetallado">
             <img src={item.img} alt={item.producto}/>
-            <h2 className="align-middle">{item.producto}</h2>
-            <p className="align-middle">{item.descripcion}</p>
-            <p className="align-middle">ARG$ {item.precio}</p>
-            <ItemCount stock={item.stock} añadido={0} porAñadir={0} className="align-middle" />
+            <div className="d-flex flex-column m-2">
+                <h2 className="align-middle">{item.producto}</h2>
+                <p className="align-middle">{item.descripcion}</p>
+            </div>
+            <div className="d-flex flex-column m-2">
+                <p className="align-middle">ARG$ {item.precio}</p>
+                <ItemCount stock={item.stock} añadido={0} porAñadir={0} className="align-middle" />
+            </div>
+            
         </div>
     )  
 }

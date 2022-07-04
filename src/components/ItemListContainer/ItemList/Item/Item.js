@@ -1,14 +1,13 @@
 import React from "react";
-import ItemCount from "../../ItemCount/ItemCount";
 
 const Item = ({item}) => {
     return (
-        <>
+        <div className="d-flex flex-column justify-content-around align-items-center producto p-2 m-2">
             <img src={item.img} />
-            <p className="align-middle">{item.producto}</p>
+            <p className="align-middle font-weight-bold">{item.producto}</p>
             <p className="align-middle">ARG$ {item.precio}</p>
-            <ItemCount stock={6} añadido={0} porAñadir={0} className="align-middle" />
-        </>
+            <button>Ver detalle</button>
+        </div>
     )
 }
 

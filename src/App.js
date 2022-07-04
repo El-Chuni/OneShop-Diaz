@@ -15,6 +15,7 @@ function App() {
       <div className="App">
         <header className="App-header bg-danger">
           <h1>One Shop!</h1>
+          <h3>¡La tienda no oficial de One Piece!</h3>
         </header>
 
         <NavBar />
