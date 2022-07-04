@@ -3,7 +3,7 @@ import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
 
 const ItemDetail = ({item}) => {
     return (
-        <div className="productoDetallado">
+        <div className="productoDetallado shadow-lg bg-light p-3 rounded">
             <img src={item.img} alt={item.producto}/>
             <div className="d-flex flex-column m-2">
                 <h2 className="align-middle">{item.producto}</h2>
