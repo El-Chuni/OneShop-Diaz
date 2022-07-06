@@ -5,16 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("./components/media/fondoPagina.jpg");
+  background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-main {
-  background-image: url("./components/media/fondoPagina.jpg");
-  background-size: cover;
 }
 
 #itemsCarrito {
@@ -61,7 +59,7 @@ main {
   display: flex;
   flex-direction: row;
   
-  align-self: center;
+  margin: 10px auto;
 
   max-width: 1000px;
   height: 600px;

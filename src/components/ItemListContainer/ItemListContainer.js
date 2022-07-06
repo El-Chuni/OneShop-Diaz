@@ -1,27 +1,24 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { listaItems } from "../../mocks/productos";
+import { infoItems } from "../../mocks/productos";
 import ItemList from "./ItemList/ItemList.js";
+import { useParams } from "react-router-dom";
+
 
 const ItemListContainer = ({frase}) => {
     
-    const promesaDeTiempo = new Promise((resolve, reject) =>
-        setTimeout(() => {
-            let seActivoElTimeout = true;
-            if (seActivoElTimeout) {
-                resolve(listaItems)
-            }else{
-                reject("Esto no se ejecutó como se esperaba.")
-            }
-        }, 2000)
-    )
+    
 
     useEffect(() => {
-        promesaDeTiempo
+        infoItems
         .then((res) => setItems(res))
-    }, [])
+        .catch((error)=> console.log(error))
+        .finally(() => setCarga(false))
+    },[])
 
+    const[carga, setCarga] = useState(true)
     const [items, setItems] = useState ([])
+    const {categoriaId} = useParams();
 
     return (
         <section className="d-flex flex-column p-5">

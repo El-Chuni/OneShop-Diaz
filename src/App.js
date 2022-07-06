@@ -18,12 +18,14 @@ function App() {
           <h3>¡La tienda no oficial de One Piece!</h3>
         </header>
 
-        <NavBar />
-        
 
         <main>
-          <ItemListContainer frase="Kaizoku ou ni ore wa naru!" />
-          <ItemDetailContainer />
+          <NavBar />
+          <Routes>
+            <Route exact path='/' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
+            <Route exact path='/categoria/:categoriaId' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
+            <Route exact path='/producto/:productoId' element={<ItemDetailContainer />} />
+          </Routes>
         </main>
       
       </div>
