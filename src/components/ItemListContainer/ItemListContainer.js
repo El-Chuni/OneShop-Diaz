@@ -7,18 +7,22 @@ import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({frase}) => {
     
-    
-
-    useEffect(() => {
-        infoItems
-        .then((res) => setItems(res))
-        .catch((error)=> console.log(error))
-        .finally(() => setCarga(false))
-    },[])
-
     const[carga, setCarga] = useState(true)
     const [items, setItems] = useState ([])
     const {categoriaId} = useParams();
+
+    useEffect(() => {
+        infoItems
+        .then((res) => {
+            if (categoriaId){
+                setItems(res.filter((item) => item.categoria ===  categoriaId))
+            }else{
+                setItems(res)
+            }
+        })
+        .catch((error)=> console.log(error))
+        .finally(() => setCarga(false))
+    },[categoriaId])
 
     return (
         <section className="d-flex flex-column p-5">

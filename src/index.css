@@ -69,6 +69,8 @@ code {
   object-fit: contain;
   width: 400px;
   height: 400px;
+  
+  margin: auto auto;
 }
 
 .productoDetallado > p {

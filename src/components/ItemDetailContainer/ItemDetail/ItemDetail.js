@@ -9,7 +9,7 @@ const ItemDetail = ({item}) => {
                 <h2 className="align-middle">{item.producto}</h2>
                 <p className="align-middle">{item.descripcion}</p>
             </div>
-            <div className="d-flex flex-column m-2">
+            <div className="d-flex flex-column m-2 align-self-end">
                 <p className="align-middle">ARG$ {item.precio}</p>
                 <ItemCount stock={item.stock} añadido={0} porAñadir={0} className="align-middle" />
             </div>

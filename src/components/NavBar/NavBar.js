@@ -22,10 +22,10 @@ const NavBar = () => {
                         Articulos
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><Link className="dropdown-item" to={`/categoria/${"ropa"}`}>Ropa</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/${"accesorios"}`}>Accesorios</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/${"volumenes"}`}>Volumenes</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/${"otros"}`}>Otros</Link></li>
+                        <li><Link className="dropdown-item" to={`/categoria/ropa`}>Ropa</Link></li>
+                        <li><Link className="dropdown-item" to={`/categoria/accesorios`}>Accesorios</Link></li>
+                        <li><Link className="dropdown-item" to={`/categoria/volumenes`}>Volumenes</Link></li>
+                        <li><Link className="dropdown-item" to={`/categoria/otros`}>Otros</Link></li>
                         </ul>
                     </li>
                     </ul>
