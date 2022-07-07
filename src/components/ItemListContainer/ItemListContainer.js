@@ -4,7 +4,7 @@ import { infoItems } from "../../mocks/productos";
 import ItemList from "./ItemList/ItemList.js";
 import { useParams } from "react-router-dom";
 
-
+//El contenedor de la lista de los objetos a la venta
 const ItemListContainer = ({frase}) => {
     
     const[carga, setCarga] = useState(true)

@@ -3,6 +3,7 @@ import { infoItems } from "../../mocks/productos";
 import ItemDetail from './ItemDetail/ItemDetail.js';
 import { useParams } from "react-router-dom";
 
+//Donde se contiene el detalle del objeto seleccionado
 const ItemDetailContainer = () => {
     
     const[item, setItem]= useState({})

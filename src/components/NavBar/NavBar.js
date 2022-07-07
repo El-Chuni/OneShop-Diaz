@@ -2,6 +2,7 @@ import React from "react";
 import CartWidget from "./CartWidget/CartWidget.js";
 import {Link} from "react-router-dom";
 
+//Lo que nos permite navegar en el sitio, cada Link hace que aparezcan objetos de una categoria en particular
 const NavBar = () => {
     return (
         <nav className='barraPrincipal navbar navbar-expand-lg fixed-top bg-dark'>

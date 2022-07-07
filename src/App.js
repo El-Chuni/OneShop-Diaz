@@ -11,6 +11,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
+    //BrowserRouter permite que Routes y los route(s) cambien de producto o categoría de productos para ver en pantalla
     <BrowserRouter>
       <div className="App">
         <header className="App-header bg-danger">

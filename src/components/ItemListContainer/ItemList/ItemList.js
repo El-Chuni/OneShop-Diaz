@@ -1,6 +1,7 @@
 import React from "react";
 import Item from "./Item/Item";
 
+//Muestra lo que hay a la venta
 const ItemList = ({items}) => {
 
     const lista = items.map((item) =>

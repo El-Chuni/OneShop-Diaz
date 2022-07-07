@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 
-const ItemCount = ({stock, añadido, porAñadir}) => {
+//La interfaz para añadir cosas al carrito
+const ItemCount = ({stock, añadido, onAdd}) => {
 
     const [compras, setCompras] = useState(0);
 
@@ -17,7 +18,7 @@ const ItemCount = ({stock, añadido, porAñadir}) => {
     }
 
     const añadirAlCarrito = () => {
-        porAñadir = compras;
+        onAdd(compras);
         setCompras(0);
     }
 
@@ -28,7 +29,7 @@ const ItemCount = ({stock, añadido, porAñadir}) => {
                     <p>{compras}</p>
                     <button onClick={añadirItem}>+</button>
             </div>
-            <botton onClick={añadirAlCarrito} className="bg-secondary rounded my-2 p-2">Añadir al carrito</botton>
+            <button onClick={añadirAlCarrito} className="bg-secondary rounded my-2 p-2">Añadir al carrito</button>
         </div>
     )
 }

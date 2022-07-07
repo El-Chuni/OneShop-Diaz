@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
+//Se cuentan detalles basicos del producto en venta
 const Item = ({item}) => {
     const {productoId} = useParams();
 
