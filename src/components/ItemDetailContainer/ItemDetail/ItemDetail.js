@@ -1,11 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
+import { useNavigate } from "react-router-dom";
 import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
+
 
 //Donde se detalla el producto más la opcion de comprar en item
 const ItemDetail = ({item}) => {
     //Para poder registrar cuanto vamos a añadir al carrito desde acá
     function onAdd(evt){
         console.log(evt)
+        console.log(item.id)
+
+    }
+
+    const [compras, setCompras] = useState(0);
+    const [aniadido, setAniadido] = useState(false);
+    const navegar = useNavigate();
+
+    const añadirItem = () => {
+        if (compras<(item.stock)) {
+            setCompras(compras + 1);
+        }
+    }
+
+    const quitarItem = () => {
+        if (compras>0) {
+            setCompras(compras - 1);
+        }
+    }
+
+    const añadirAlCarrito = () => {
+        onAdd(compras);
+        setCompras(0);
+        setAniadido(true);
     }
 
     return (
@@ -18,7 +44,12 @@ const ItemDetail = ({item}) => {
             <div className="d-flex flex-column m-2 align-self-end">
                 <h4 className="align-middle">ARG$ {item.precio}</h4>
                 <p className="align-middle">Queda(n) {item.stock} en stock</p>
-                <ItemCount stock={item.stock} añadido={0} onAdd={onAdd} className="align-middle" />
+                {aniadido ?
+                <div className="d-flex flex-column">
+                    <button className="bg-secondary rounded my-2 p-2" onClick={() => {navegar('/carrito')}}>Ver tu carrito</button>
+                    <button className="bg-secondary rounded my-2 p-2" onClick={() => {navegar('/')}}>Seguir comprando</button>
+                </div>
+                :<ItemCount compras={compras} añadirItem={añadirItem} quitarItem={quitarItem} añadirAlCarrito={añadirAlCarrito} className="align-middle" />}
             </div>
             
         </div>

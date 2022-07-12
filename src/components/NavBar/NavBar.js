@@ -35,7 +35,9 @@ const NavBar = () => {
                         <button className="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                     <li>
-                        <CartWidget />
+                        <Link to='/carrito'>
+                            <CartWidget />
+                        </Link>
                     </li>
                 </div>
             </div>

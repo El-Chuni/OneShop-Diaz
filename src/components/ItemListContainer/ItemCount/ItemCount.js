@@ -1,26 +1,9 @@
-import React, {useState} from "react";
+import React from "react";
 
 //La interfaz para añadir cosas al carrito
-const ItemCount = ({stock, añadido, onAdd}) => {
+const ItemCount = ({compras, añadirItem, quitarItem, añadirAlCarrito}) => {
 
-    const [compras, setCompras] = useState(0);
-
-    const añadirItem = () => {
-        if (compras<(stock-añadido)) {
-            setCompras(compras + 1);
-        }
-    }
-
-    const quitarItem = () => {
-        if (compras>0) {
-            setCompras(compras - 1);
-        }
-    }
-
-    const añadirAlCarrito = () => {
-        onAdd(compras);
-        setCompras(0);
-    }
+    
 
     return (
         <div className="d-flex flex-column">
