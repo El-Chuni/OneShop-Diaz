@@ -5,13 +5,15 @@ const { Provider } = carrito;
 
 const ContextoCompras = ({children}) => {
 
-    const [contenido, setContenido] = useState([{itemId: 0, cantidad: 0}]);
+    const [contenido, setContenido] = useState([]);
 
-    const llenarCarrito = (contenidoDeOnAdd) =>{
-        if (contenido[0].itemId === 0){
-            setContenido({itemId: contenidoDeOnAdd.id, cantidad: contenidoDeOnAdd.cantidad})
+    const llenarCarrito = ( id, cantidad ) =>{
+        if(contenido.find((producto) => producto.itemId === id)){
+            alert("No se puede añadir al carrito porque ya está ahí, si quiere cambiar su cantidad debe quitarlo del carrito primero.")
+        }else{
+            setContenido(contenido => [...contenido, {itemId: id, cantidad: cantidad}])
         }
-    };
+    }
 
     const sacarDelCarrito = (id) => {
 

@@ -1,15 +1,19 @@
-import React, {useState} from "react";
+import React, {useState, useContext} from "react";
 import { useNavigate } from "react-router-dom";
 import ItemCount from "../../ItemListContainer/ItemCount/ItemCount";
+import { carrito } from "../../../context/cartContext";
 
 
 //Donde se detalla el producto más la opcion de comprar en item
 const ItemDetail = ({item}) => {
-    //Para poder registrar cuanto vamos a añadir al carrito desde acá
-    function onAdd(evt){
-        console.log(evt)
-        console.log(item.id)
 
+    const { llenarCarrito } = useContext(carrito)
+
+    //Para poder registrar cuanto vamos a añadir al carrito desde acá
+    function onAdd(paraAniadir){
+        console.log(paraAniadir);
+        console.log(item.id);
+        llenarCarrito(item.id, paraAniadir)
     }
 
     const [compras, setCompras] = useState(0);
