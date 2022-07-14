@@ -28,6 +28,11 @@ code {
   z-index: 2;
 }
 
+#close {
+  top: 2px;
+  left: 2px;
+}
+
 .barraPrincipal {
   margin-top: 0;
 }

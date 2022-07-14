@@ -15,9 +15,6 @@ const NavBar = () => {
                     <li className="nav-item">
                         <Link className="nav-link text-light" to={'/'}>Inicio</Link>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link text-light" href="#">Carrito</a>
-                    </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Articulos

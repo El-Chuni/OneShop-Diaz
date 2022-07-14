@@ -12,8 +12,8 @@ const ItemDetail = ({item}) => {
     //Para poder registrar cuanto vamos a añadir al carrito desde acá
     function onAdd(paraAniadir){
         console.log(paraAniadir);
-        console.log(item.id);
-        llenarCarrito(item.id, paraAniadir)
+        console.log(item);
+        llenarCarrito(item, paraAniadir)
     }
 
     const [compras, setCompras] = useState(0);
