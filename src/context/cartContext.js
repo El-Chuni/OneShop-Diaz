@@ -5,25 +5,26 @@ const { Provider } = carrito;
 
 const ContextoCompras = ({children}) => {
 
+    
     const [contenido, setContenido] = useState([]);
 
     const existeEnElCarrito = (item) => {
-        if (carrito.find(producto => producto.item === item)) {
+        if (contenido.find((producto) => producto.id === item.id)) {
             return true
         }else{
             return false
         }
     }
 
-    const llenarCarrito = ( item, cantidad ) =>{
+    const llenarCarrito = (productoParaCarrito) =>{
         
-        if(existeEnElCarrito){
+        if(existeEnElCarrito(productoParaCarrito)){
 
             const actualizarCarrito = contenido.map((prod) => {
 
-                if(prod.item === item){
+                if(prod.id === productoParaCarrito.id){
 
-                    return {...prod, cantidad: cantidad + prod.cantidad}
+                    return {...prod, cantidad: prod.cantidad + productoParaCarrito.cantidad}
 
                 }else{
 
@@ -37,19 +38,18 @@ const ContextoCompras = ({children}) => {
 
         }else{
 
-            setContenido(contenido => [...contenido, {item: item, cantidad: cantidad}])
+            setContenido([...contenido, productoParaCarrito])
         }
 
         console.log(contenido)
     }
 
     const sacarDelCarrito = (item) => {
-        const paraQuitar = item.target.getAttribute("item")
-        setContenido(contenido.filter(producto => producto.item !== paraQuitar));
+        setContenido(contenido.filter(producto => producto.id !== item.id));
     }
 
     const totalCarrito = () => {
-        const arrayValorTotal = contenido.map((producto) => producto.item.precio * producto.cantidad).reduce((partialSum, a) => partialSum + a, 0);
+        const arrayValorTotal = contenido.map((producto) => producto.precio * producto.cantidad).reduce((partialSum, a) => partialSum + a, 0);
         
         return arrayValorTotal;
     }

@@ -7,14 +7,9 @@ import { carrito } from "../../../context/cartContext";
 //Donde se detalla el producto más la opcion de comprar en item
 const ItemDetail = ({item}) => {
 
+    const {id, img, producto, precio, stock} = item;
     const { llenarCarrito } = useContext(carrito)
-
-    //Para poder registrar cuanto vamos a añadir al carrito desde acá
-    function onAdd(paraAniadir){
-        console.log(paraAniadir);
-        console.log(item);
-        llenarCarrito(item, paraAniadir)
-    }
+    
 
     const [compras, setCompras] = useState(0);
     const [aniadido, setAniadido] = useState(false);
@@ -32,8 +27,10 @@ const ItemDetail = ({item}) => {
         }
     }
 
+    //Para poder registrar que y cuanto vamos a añadir al carrito desde acá
     const añadirAlCarrito = () => {
-        onAdd(compras);
+        let productoParaCarrito = {id, img, producto, stock, precio, cantidad: compras}
+        llenarCarrito(productoParaCarrito);
         setCompras(0);
         setAniadido(true);
     }

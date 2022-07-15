@@ -9,7 +9,7 @@ export const ListCart = () => {
     const {contenido} = useContext(carrito)
 
     const lista = contenido.map((producto) =>
-        <li className="shadow-lg bg-light p-3 rounded my-2" key={producto.item.id}>
+        <li className="shadow-lg bg-light p-3 rounded my-2" key={producto.id}>
             <ItemCart producto={producto}/>
         </li>
     )

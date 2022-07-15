@@ -28,11 +28,6 @@ code {
   z-index: 2;
 }
 
-#close {
-  top: 2px;
-  left: 2px;
-}
-
 .barraPrincipal {
   margin-top: 0;
 }
@@ -88,4 +83,34 @@ code {
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
+}
+
+.enCarrito {
+  background-color: rgba(0, 17, 255, 0.288);
+
+  height: 225px;
+
+  border-bottom: 1px solid transparent;
+}
+
+.enCarrito > img {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+  
+  margin: auto auto;
+}
+
+.enCarrito > div {
+  border-right: 4px solid transparent;
+  border-left: 2px solid transparent;
+}
+
+.cerrar {
+  position: relative;
+  top: 2px;
+  left: 2px;
+
+  width: 3px;
+  height: 3px;
 }
