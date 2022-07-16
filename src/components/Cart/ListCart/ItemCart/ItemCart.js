@@ -18,7 +18,7 @@ const ItemCart = ({producto}) => {
                 <p className="align-middle">Total:</p>
                 <p className="align-middle">ARG$ {producto.precio}</p>
             </div>
-            <button onClick={sacarDelCarrito(producto)}><img src={close} alt="close"/></button>
+            <button onClick={sacarDelCarrito(producto.id)}><img src={close} alt="close"/></button>
         </div>
     )
 }

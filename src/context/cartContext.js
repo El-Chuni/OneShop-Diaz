@@ -44,8 +44,8 @@ const ContextoCompras = ({children}) => {
         console.log(contenido)
     }
 
-    const sacarDelCarrito = (item) => {
-        setContenido(contenido.filter(producto => producto.id !== item.id));
+    const sacarDelCarrito = (id) => {
+        setContenido(contenido.filter(producto => producto.id !== id));
     }
 
     const totalCarrito = () => {
