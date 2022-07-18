@@ -8,9 +8,12 @@ const CartWidget = () => {
 
     return (
         <>
-            <span className="material-icons-outlined bg-light rounded">add_shopping_cart</span>
+            
             {(contenido.length === 0) ? <></>
-            :<p>{cantidadTotal}</p>
+            :<>
+                <span className="material-icons-outlined bg-light rounded">add_shopping_cart</span>
+                <p>{cantidadTotal}</p>
+            </>
             }
         </>
     )
