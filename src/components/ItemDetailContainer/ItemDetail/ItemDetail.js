@@ -31,7 +31,6 @@ const ItemDetail = ({item}) => {
     const añadirAlCarrito = () => {
         let productoParaCarrito = {id, img, producto, stock, precio, cantidad: compras}
         llenarCarrito(productoParaCarrito);
-        setCompras(0);
         setAniadido(true);
     }
 

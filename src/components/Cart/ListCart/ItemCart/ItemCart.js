@@ -4,7 +4,9 @@ import { carrito } from "../../../../context/cartContext";
 import close from "../../../media/close.png";
 
 //Se muestra el objeto en el carrito
-const ItemCart = ({producto, aQuitar}) => {
+const ItemCart = ({producto}) => {
+
+    const { sacarDelCarrito } = useContext(carrito)
 
     return (
         
@@ -16,7 +18,7 @@ const ItemCart = ({producto, aQuitar}) => {
                 <p className="align-middle">Total:</p>
                 <p className="align-middle">ARG$ {producto.precio}</p>
             </div>
-            <button onClick={aQuitar(producto.id)}><img src={close} alt="close"/></button>
+            <button onClick={() => sacarDelCarrito(producto.id)}><img src={close} alt="close"/></button>
         </div>
     )
 }

@@ -48,10 +48,12 @@ const ContextoCompras = ({children}) => {
         setContenido(contenido.filter(producto => producto.id !== id));
     }
 
+    const cantidadTotal = () =>{
+        return contenido.reduce((acc, item)=> acc += item.cantidad, 0)
+
+    }
     const totalCarrito = () => {
-        const arrayValorTotal = contenido.map((producto) => producto.precio * producto.cantidad).reduce((partialSum, a) => partialSum + a, 0);
-        
-        return arrayValorTotal;
+        return contenido.reduce((acc, item)=> acc += item.cantidad * item.precio, 0)
     }
 
     const resetearCarrito = () => {
@@ -59,7 +61,7 @@ const ContextoCompras = ({children}) => {
     }
 
     return (
-        <Provider value={{contenido, llenarCarrito, sacarDelCarrito, existeEnElCarrito, totalCarrito, resetearCarrito}} >
+        <Provider value={{contenido, llenarCarrito, sacarDelCarrito, existeEnElCarrito, totalCarrito, resetearCarrito, cantidadTotal}} >
             {children}
         </Provider>
     )
