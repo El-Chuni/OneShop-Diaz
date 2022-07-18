@@ -40,7 +40,7 @@ const ContextoCompras = ({children}) => {
 
             setContenido([...contenido, productoParaCarrito])
         }
-
+        
         console.log(contenido)
     }
 

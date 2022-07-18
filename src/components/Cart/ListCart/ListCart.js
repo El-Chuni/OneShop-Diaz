@@ -4,13 +4,15 @@ import { useContext } from "react";
 import { carrito } from "../../../context/cartContext";
 
 
-export const ListCart = () => {
+export const ListCart = ({aQuitar}) => {
 
-    const {contenido} = useContext(carrito)
+    const { contenido } = useContext(carrito)
+
+    
 
     const lista = contenido.map((producto) =>
         <li className="shadow-lg bg-light p-3 rounded my-2" key={producto.id}>
-            <ItemCart producto={producto}/>
+            <ItemCart producto={producto} aQuitar={aQuitar}/>
         </li>
     )
 

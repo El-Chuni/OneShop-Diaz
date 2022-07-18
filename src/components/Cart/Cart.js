@@ -5,7 +5,11 @@ import { ListCart } from './ListCart/ListCart'
 
 export const Cart = () => {
     
-  const { contenido, totalCarrito, resetearCarrito } = useContext(carrito)
+  const { contenido, totalCarrito, resetearCarrito, sacarDelCarrito } = useContext(carrito)
+
+  const aQuitar = (id) => {
+    sacarDelCarrito(id)
+  }
 
   return (
     <>
@@ -14,7 +18,7 @@ export const Cart = () => {
         {(contenido.length === 0) ?
           <h2>Este carrito está vacio, vuelva a acceder cuando haya decidido que comprar.</h2>
           :<div className='d-flex flex-column m-2'>
-              <ListCart />
+              <ListCart aQuitar={aQuitar} />
           </div>
         }
         
