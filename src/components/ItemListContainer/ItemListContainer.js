@@ -8,7 +8,7 @@ import { collection, getDocs, getFirestore, query, where } from "firebase/firest
 //El contenedor de la lista de los objetos a la venta
 const ItemListContainer = ({frase}) => {
     
-    //const[carga, setCarga] = useState(true)
+    const[carga, setCarga] = useState(true)
     const [items, setItems] = useState ([])
     const {categoriaId} = useParams();
 
@@ -25,17 +25,15 @@ const ItemListContainer = ({frase}) => {
         //.finally(() => setCarga(false))
 
         const db = getFirestore();
-        if (categoriaId){
-            const loDelFirestore = query(collection(db, "productos"), where("categoria", "==", categoriaId));
-            getDocs(loDelFirestore).then((datosProducto) => {
-                setItems(datosProducto.docs.map((doc) => ({id: doc.id, ...doc.data()})));
-            });
-        }else{
-            const loDelFirestore = collection(db, "productos");
-            getDocs(loDelFirestore).then((datosProducto) => {
-                setItems(datosProducto.docs.map((doc) => ({id: doc.id, ...doc.data()})));
-            });
-        }
+        const loDelFirestore = categoriaId ?
+        query(collection(db, "productos"), where("categoria", "==", categoriaId))
+        : collection(db, "productos");
+        getDocs(loDelFirestore).then((datosProducto) => {
+            setItems(datosProducto.docs.map((doc) => ({id: doc.id, ...doc.data()})));
+        })
+        .catch((error)=> console.log(error))
+        .finally(() => setCarga(false));
+        
         
         
     },[categoriaId])

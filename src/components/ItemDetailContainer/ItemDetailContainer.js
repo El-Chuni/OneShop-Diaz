@@ -8,7 +8,7 @@ import { doc, getDoc, getFirestore } from "firebase/firestore";
 const ItemDetailContainer = () => {
     
     const[item, setItem]= useState({})
-    //const[carga, setCarga] = useState(true)
+    const[carga, setCarga] = useState(true)
 
     const {productoId} = useParams();
 
@@ -23,7 +23,9 @@ const ItemDetailContainer = () => {
         const loDelFirestore = doc(db, "productos", productoId);
         getDoc(loDelFirestore).then((datosProducto) => {
             setItem({id: datosProducto.id, ...datosProducto.data()});
-        });
+        })
+        .catch((error)=> console.log(error))
+        .finally(() => setCarga(false));
     },[productoId])
 
     return (
