@@ -60,6 +60,7 @@ const ContextoCompras = ({children}) => {
         setContenido([])
     }
 
+
     return (
         <Provider value={{contenido, llenarCarrito, sacarDelCarrito, existeEnElCarrito, totalCarrito, resetearCarrito, cantidadTotal}} >
             {children}

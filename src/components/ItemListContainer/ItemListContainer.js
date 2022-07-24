@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { infoItems } from "../../mocks/productos";
 import ItemList from "./ItemList/ItemList.js";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
@@ -13,17 +12,6 @@ const ItemListContainer = ({frase}) => {
     const {categoriaId} = useParams();
 
     useEffect(() => {
-        //infoItems
-        //.then((res) => {
-        //    if (categoriaId){
-        //        setItems(res.filter((item) => item.categoria ===  categoriaId))
-        //    }else{
-        //        setItems(res)
-        //    }
-        //})
-        //.catch((error)=> console.log(error))
-        //.finally(() => setCarga(false))
-
         const db = getFirestore();
         const loDelFirestore = categoriaId ?
         query(collection(db, "productos"), where("categoria", "==", categoriaId))
