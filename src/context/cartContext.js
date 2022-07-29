@@ -2,11 +2,19 @@ import React, { createContext, useState } from "react";
 
 export const carrito = createContext({});
 const { Provider } = carrito;
+const carritoDeLocalStorage = JSON.parse(localStorage.getItem('contenido') || '[]' );
 
 const ContextoCompras = ({children}) => {
 
+    const [contenido, setContenido] = useState(carritoDeLocalStorage);
+
+    useEffect(() => {
     
-    const [contenido, setContenido] = useState([]);
+        localStorage.setItem('contenido', JSON.stringify(contenido))
+    
+    }, [contenido])
+
+    
 
     const existeEnElCarrito = (item) => {
         if (contenido.find((producto) => producto.id === item.id)) {
