@@ -8,17 +8,37 @@ import { carrito } from "../../../context/cartContext";
 const ItemDetail = ({item}) => {
 
     const {id, img, producto, precio, stock} = item;
-    const { llenarCarrito } = useContext(carrito)
+    const { llenarCarrito, existeEnElCarrito, contenido } = useContext(carrito)
     
 
     const [compras, setCompras] = useState(0);
     const [aniadido, setAniadido] = useState(false);
     const navegar = useNavigate();
 
+    const verStock = (item) => {
+        contenido.map((prod) => {
+
+            if(prod.id === item.id){
+
+                return prod.cantidad
+
+            }
+        })
+    }
+
+    const stockEnCarrito = () => {
+        if (existeEnElCarrito(item)) {
+            verStock(item)
+        } else {
+            return 0
+        }
+    }
+
     const añadirItem = () => {
-        if (compras<(item.stock)) {
+        if (compras<(item.stock - stockEnCarrito)) {
             setCompras(compras + 1);
         }
+        console.log(stockEnCarrito);
     }
 
     const quitarItem = () => {
@@ -29,8 +49,8 @@ const ItemDetail = ({item}) => {
 
     //Para poder registrar que y cuanto vamos a añadir al carrito desde acá
     const añadirAlCarrito = () => {
-        let productoParaCarrito = {id, img, producto, stock, precio, cantidad: compras}
-        llenarCarrito(productoParaCarrito);
+        let item = {id, img, producto, stock, precio, cantidad: compras}
+        llenarCarrito(item);
         setAniadido(true);
     }
 

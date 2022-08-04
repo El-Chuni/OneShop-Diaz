@@ -1,8 +1,10 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 export const carrito = createContext({});
 const { Provider } = carrito;
 const carritoDeLocalStorage = JSON.parse(localStorage.getItem('contenido') || '[]' );
+
+//El contexto del carrito, el contenido es lo que lleva y las otras constantes sirven de función para actualizarlo
 
 const ContextoCompras = ({children}) => {
 
@@ -61,7 +63,7 @@ const ContextoCompras = ({children}) => {
 
     }
     const totalCarrito = () => {
-        return contenido.reduce((acc, item)=> acc += item.cantidad * item.precio, 0)
+        return (contenido.reduce((acc, item)=> acc += item.cantidad * item.precio, 0)).toFixed(2)
     }
 
     const resetearCarrito = () => {

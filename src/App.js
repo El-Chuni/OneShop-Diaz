@@ -18,6 +18,7 @@ function App() {
   return (
     
     //BrowserRouter permite que Routes y los route(s) cambien de producto o categoría de productos para ver en pantalla
+    //ContextoCompras comparte la informacion con todos los hijos del main para que interactuen entre sí
     <>
     
     

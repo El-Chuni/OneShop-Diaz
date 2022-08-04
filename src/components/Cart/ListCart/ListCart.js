@@ -11,9 +11,9 @@ export const ListCart = ({aQuitar}) => {
     
 
     const lista = contenido.map((producto) =>
-        <li className="shadow-lg bg-light p-3 rounded my-2" key={producto.id}>
+        <div className="row m-2" key={producto.id}>
             <ItemCart producto={producto}/>
-        </li>
+        </div>
     )
 
     return (

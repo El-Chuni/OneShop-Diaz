@@ -17,8 +17,10 @@ export const Cart = () => {
           <h2>Este carrito está vacio, vuelva a acceder cuando haya decidido que comprar.</h2>
           :
           <div className='d-flex flex-row m-2'>
-            <div className='d-flex flex-column m-2'>
-                <ListCart />
+            <div className='container'>
+                <div className='column m-2'>
+                  <ListCart />
+                </div>
             </div>
             <div className='d-flex flex-column m-2'>
               <p>Total: ARG$ {totalCarrito()}</p>
