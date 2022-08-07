@@ -28,6 +28,15 @@ code {
   z-index: 2;
 }
 
+.fondoHeader {
+  background-image: url("./components/media/Straw_Hat_Friendship_X_Mark.webp");
+  background-size: cover;
+
+  padding-top: 10px;
+
+  -webkit-text-stroke: 1px rgb(0, 0, 0);
+}
+
 .barraPrincipal {
   margin-top: 0;
 }
@@ -108,8 +117,7 @@ code {
 
 .enCarrito > button {
   position: relative;
-  top: 2px;
-  left: 2px;
+  align-self: flex-start;
 
   background: none;
   border: none;
@@ -122,4 +130,10 @@ code {
   object-fit: contain;
   width: 8px;
   height: 8px;
+}
+
+.botonCarrito {
+  margin: 2px;
+
+  background-color: rgb(87, 87, 187);
 }

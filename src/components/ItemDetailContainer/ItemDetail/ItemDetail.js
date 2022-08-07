@@ -34,6 +34,7 @@ const ItemDetail = ({item}) => {
         }
     }
 
+    //Estos dos suman y restan cuanto vamos a enviar al carrito antes de confirmarlo
     const añadirItem = () => {
         if (compras<(item.stock - stockEnCarrito)) {
             setCompras(compras + 1);

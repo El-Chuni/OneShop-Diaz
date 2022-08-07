@@ -4,11 +4,11 @@ import { useContext } from "react";
 import { carrito } from "../../../context/cartContext";
 
 
-export const ListCart = ({aQuitar}) => {
+export const ListCart = () => {
 
     const { contenido } = useContext(carrito)
 
-    
+    //Tal como se imagina en el nombre, muestra la lista de items
 
     const lista = contenido.map((producto) =>
         <div className="row m-2" key={producto.id}>
