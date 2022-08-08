@@ -10,12 +10,12 @@ const Checkout = () => {
     const { contenido, totalCarrito, resetearCarrito} = useContext(carrito)
 
     const handleChange = (e) => {
-        setCliente({
-          ...cliente,
-          [e.target.name] : e.target.value
-          
-        })
-      }
+      setCliente({
+        ...cliente,
+        [e.target.name] : e.target.value
+        
+      })
+    }
     
       const terminarCompra = () => {
        

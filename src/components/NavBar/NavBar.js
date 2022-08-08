@@ -1,9 +1,15 @@
-import React from "react";
+import React , {useState} from "react";
 import CartWidget from "./CartWidget/CartWidget.js";
 import {Link} from "react-router-dom";
 
 //Lo que nos permite navegar en el sitio, cada Link hace que aparezcan objetos de una categoria en particular
 const NavBar = () => {
+    const [busqueda, setBusqueda]= useState('')
+
+    const handleChange = (e) => {
+        setBusqueda(e.target.value)
+    }
+
     return (
         <nav className='barraPrincipal navbar navbar-expand-lg fixed-top bg-dark'>
             <div className="container-fluid">
@@ -28,8 +34,10 @@ const NavBar = () => {
                     </li>
                     </ul>
                     <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Buscar</button>
+                        <input className="form-control me-2" type='text' name='nombre' onChange={handleChange} placeholder="Busca tu producto..." aria-label="Busca tu producto..." />
+                        <Link to={`/busqueda/${busqueda}`}>
+                            <button className="btn btn-outline-success" type="submit">Buscar</button>
+                        </Link>
                     </form>
                     <li>
                         <Link to='/carrito'>

@@ -8,38 +8,18 @@ import { carrito } from "../../../context/cartContext";
 const ItemDetail = ({item}) => {
 
     const {id, img, producto, precio, stock} = item;
-    const { llenarCarrito, existeEnElCarrito, contenido } = useContext(carrito)
+    const { llenarCarrito } = useContext(carrito)
     
 
     const [compras, setCompras] = useState(0);
     const [aniadido, setAniadido] = useState(false);
     const navegar = useNavigate();
 
-    const verStock = (item) => {
-        contenido.map((prod) => {
-
-            if(prod.id === item.id){
-
-                return prod.cantidad
-
-            }
-        })
-    }
-
-    const stockEnCarrito = () => {
-        if (existeEnElCarrito(item)) {
-            verStock(item)
-        } else {
-            return 0
-        }
-    }
-
     //Estos dos suman y restan cuanto vamos a enviar al carrito antes de confirmarlo
     const añadirItem = () => {
-        if (compras<(item.stock - stockEnCarrito)) {
+        if (compras<(item.stock)) {
             setCompras(compras + 1);
         }
-        console.log(stockEnCarrito);
     }
 
     const quitarItem = () => {

@@ -11,6 +11,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ContextoCompras from './context/cartContext';
 import { Cart } from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
+import SearchItemList from './components/SearchItemList/searchItemList';
 
 
 
@@ -35,6 +36,7 @@ function App() {
                 <Route path='/' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
                 <Route path='/categoria/:categoriaId' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
                 <Route path='/producto/:productoId' element={<ItemDetailContainer />} />
+                <Route path='/busqueda/:searchId' element={<SearchItemList />} />
                 <Route path='/carrito' element={<Cart />} />
                 <Route path='/checkout' element={<Checkout />} />
               </Routes>
