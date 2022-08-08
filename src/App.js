@@ -33,8 +33,8 @@ function App() {
             <ContextoCompras>
               <NavBar />
               <Routes>
-                <Route path='/' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
-                <Route path='/categoria/:categoriaId' element={<ItemListContainer frase='Kaizoku ou ni ore wa naru!' />} />
+                <Route path='/' element={<ItemListContainer/>} />
+                <Route path='/categoria/:categoriaId' element={<ItemListContainer/>} />
                 <Route path='/producto/:productoId' element={<ItemDetailContainer />} />
                 <Route path='/busqueda/:searchId' element={<SearchItemList />} />
                 <Route path='/carrito' element={<Cart />} />

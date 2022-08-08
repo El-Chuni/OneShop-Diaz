@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 
 //El contenedor de la lista de los objetos a la venta
-const ItemListContainer = ({frase}) => {
+const ItemListContainer = () => {
     
     const[carga, setCarga] = useState(true)
     const [items, setItems] = useState ([])
@@ -28,7 +28,6 @@ const ItemListContainer = ({frase}) => {
 
     return (
         <section className="d-flex flex-column p-5">
-            <span>{frase}</span>
             <ItemList items={items}/>
         </section>
     )
