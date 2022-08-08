@@ -40,28 +40,28 @@ const Checkout = () => {
   return (
     <section className='d-flex flex-column m-2'>
          {!ordenDeCompra ?
-          <div className='d-flex flex-column m-2'>
+          <div className='d-flex flex-column align-middle m-2'>
             <p>Ingrese sus datos para terminar:</p>
-            <div className='d-flex flex-row m-2'>
+            <div className='d-flex flex-row align-middle m-2'>
                 <p>Nombre y apellido:</p>
                 <input className='mx-2' type='text' name='nombre' onChange={handleChange} placeholder='Ej.: Monkey D. Luffy'/>
             </div>
-            <div className='d-flex flex-row m-2'>
+            <div className='d-flex flex-row align-middle m-2'>
                 <p>Telefono:</p>
                 <input className='mx-2' type='number' name='telefono' onChange={handleChange} placeholder='Ej.: 2010-1999 (sin guion)'/>
             </div>
-            <div className='d-flex flex-row m-2'>
+            <div className='d-flex flex-row align-middle m-2'>
                 <p>Mail:</p>
                 <input className='mx-2' type='mail' name='mail' onChange={handleChange} placeholder='Ej.: reydelospiratas@hotmail.com'/>
             </div>
-            <button onClick={terminarCompra}>Terminar compra</button>
+            <button className='botonCheckout rounded' onClick={terminarCompra}>Terminar compra</button>
           </div>
         : <>
 
             <h2>¡Muchas gracias por su compra!</h2>
             <p className='text-center'>(No se lo diremos a la marina)</p>
             <h5>Su codigo de orden: {ordenDeCompra}</h5>
-            <button onClick={()=> navegar('/')}>Volver</button>
+            <button className='botonCheckout rounded' onClick={()=> navegar('/')}>Volver</button>
 
           </> }
     </section>

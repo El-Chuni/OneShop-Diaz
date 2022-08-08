@@ -135,5 +135,15 @@ code {
 .botonCarrito {
   margin: 2px;
 
+  max-width: 100px;
+  align-self: center;
+
   background-color: rgb(87, 87, 187);
+}
+
+.botonCheckout {
+  max-width: 100px;
+  align-self: center;
+
+  background-color: rgb(255, 255, 255);
 }
