@@ -6,6 +6,7 @@ const CartWidget = () => {
 
     const { contenido, cantidadTotal } = useContext(carrito)
 
+    //No es el carrito de verdad pero sí su acceso, solo aparece cuando .
     return (
         <>
             

@@ -18,27 +18,24 @@ const NavBar = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li className="nav-item">
-                        <Link className="nav-link text-light" to={'/'}>Inicio</Link>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Articulos
-                        </a>
-                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><Link className="dropdown-item" to={`/categoria/ropa`}>Ropa</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/accesorios`}>Accesorios</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/volumenes`}>Volumenes</Link></li>
-                        <li><Link className="dropdown-item" to={`/categoria/otros`}>Otros</Link></li>
-                        </ul>
-                    </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-light" to={'/'}>Inicio</Link>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Articulos
+                            </a>
+                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><Link className="dropdown-item" to={`/categoria/ropa`}>Ropa</Link></li>
+                                <li><Link className="dropdown-item" to={`/categoria/accesorios`}>Accesorios</Link></li>
+                                <li><Link className="dropdown-item" to={`/categoria/volumenes`}>Volumenes</Link></li>
+                                <li><Link className="dropdown-item" to={`/categoria/otros`}>Otros</Link></li>
+                            </ul>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link text-light" to={`/busqueda`}>Buscar</Link>
+                        </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type='text' name='nombre' onChange={handleChange} placeholder="Busca tu producto..." aria-label="Busca tu producto..." />
-                        <Link to={`/busqueda/${busqueda}`}>
-                            <button className="btn btn-outline-success" type="submit">Buscar</button>
-                        </Link>
-                    </form>
                     <li>
                         <Link to='/carrito'>
                             <CartWidget />
