@@ -6,11 +6,16 @@ import ContainerItemList from "./ContainerItemList/containerItemList";
 const SearchItemList = () => {
 
     const [carga, setCarga] = useState(true)
-    const [espera, setEspera] = useState(false)
     const [items, setItems] = useState ([])
+    const [busqueda, setBusqueda]= useState('')
     const [resultado, setResultado] = useState ([])
 
     const {searchId} = useParams();
+
+    const filtro = (nombreProducto) => {
+        let filtrarItems = items.filter((producto) => producto.producto.toLowerCase().startsWith(nombreProducto.trim().toLowerCase()));
+        setResultado(filtrarItems)
+    }
 
     //Se filtran cuales productos tienen el nombre que busco
     //Ojo, no es perfecto, hay que ser especifico con las palabras completas, aunque solo es necesaria la primera
@@ -22,25 +27,26 @@ const SearchItemList = () => {
         })
         .catch((error)=> console.log(error))
         .finally(() => setCarga(false));
+    },[])
 
-        let filtrarItems = items.filter((producto) => producto.producto.toLowerCase().startsWith(searchId.trim().toLowerCase()));
-        setResultado(filtrarItems);
+    useEffect(() => {
+        setResultado(items);
+    },[items])
 
-        setTimeout(
-            setEspera(true)
-        , 2000)
-    },[searchId])
-
+    const handleChange = (e) => {
+        setBusqueda(e.target.value)
+        filtro(e.target.value)
+    }
     
 
 
     //Muestra los resultados de tu busqueda
     return (
         <section className="d-flex flex-column p-5">
-            {!espera ? 
-            <span>Espere un segundo...</span>
-            :<ContainerItemList resultado={resultado}/>
-            }
+            <input className="form-control me-2" type='text' name='nombre' onChange={handleChange} placeholder="Busca tu producto..." aria-label="Busca tu producto..." />    
+                        
+            <ContainerItemList resultado={resultado}/>
+            
         </section>
     )
 }
