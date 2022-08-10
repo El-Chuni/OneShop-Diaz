@@ -15,6 +15,7 @@ Puede acceder directamente acá en el link: [One Shop!](https://oneshop-diaz.ver
 En la carpeta base/raiz, ejecute los siguientes comandos por separado en cmd (o en la terminal de Visual Studio Code) en el siguiente orden:
 
 -npm install
+
 -npm start
 
 Si quiere experimentar con esta app, se le sugiere hacer esta opción para jugar con el codigo, despues de todo el sitio web es open source.
