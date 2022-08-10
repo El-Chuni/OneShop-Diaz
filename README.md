@@ -20,6 +20,14 @@ En la carpeta base/raiz, ejecute los siguientes comandos por separado en cmd (o 
 
 Si quiere experimentar con esta app, se le sugiere hacer esta opción para jugar con el codigo, despues de todo el sitio web es open source.
 
+## Tecnologías usadas:
+
+[ReactJS](https://es.reactjs.org): Responsable de la agilidad del sitio web y la coordinación de sus scripts.
+
+[Bootstrap](https://getbootstrap.com): Apoyo CSS en varios elementos visuales de la interfaz del sitio.
+
+[Firebase](https://firebase.google.com/?hl=es): Fuente de información de donde se saca información de los productos y donde quedan registradas las ventas.
+
 ## Agradecimientos:
 
 Le agradezco mucho a la tutora Laura Therisod por la paciencia y apoyarme en el curso, es hasta ahora la mejor que conocí en Coderhouse
